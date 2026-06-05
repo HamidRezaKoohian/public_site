@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>HamidReza Kouhian | Personal Website</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: #f7f4ef;
+      color: #1f2933;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 244, 239, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e4ded4;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: #183c34;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #b8842b;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(184, 132, 43, 0.20), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(24, 60, 52, 0.18), transparent 36%);
+      padding: 90px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #183c34;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 74px);
+      line-height: 1.12;
+      color: #183c34;
+      letter-spacing: -1.6px;
+      margin-bottom: 24px;
+    }
+
+    .hero-text {
+      font-size: 19px;
+      color: #4b5563;
+      max-width: 690px;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #183c34;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #102a24;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid #b8842b;
+      color: #183c34;
+      background: #fffaf2;
+    }
+
+    .btn-secondary:hover {
+      background: #b8842b;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid #eadfce;
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: 0 24px 70px rgba(24, 60, 52, 0.16);
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #f4eadb;
+      box-shadow: 0 18px 45px rgba(24, 60, 52, 0.18);
+      margin-bottom: 22px;
+    }
+
+    .profile-card h2 {
+      color: #183c34;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .profile-card p {
+      color: #59636e;
+      font-size: 15px;
+    }
+
+    .profile-details {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+      text-align: left;
+    }
+
+    .detail {
+      background: #f7f4ef;
+      border: 1px solid #eadfce;
+      padding: 11px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    section {
+      padding: 88px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+
+    .section-title span {
+      color: #b8842b;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+    }
+
+    .section-title h2 {
+      color: #183c34;
+      font-size: clamp(30px, 4vw, 46px);
+      margin-top: 8px;
+    }
+
+    .about-box {
+      background: white;
+      border: 1px solid #eadfce;
+      border-radius: 28px;
+      padding: 42px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.055);
+      font-size: 18px;
+      color: #4b5563;
+      max-width: 930px;
+      margin: auto;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 24px;
+      max-width: 980px;
+      margin: auto;
+    }
+
+    .experience-card {
+      background: white;
+      border: 1px solid #eadfce;
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.055);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 8px;
+      height: 100%;
+      background: linear-gradient(#183c34, #b8842b);
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .experience-card h3 {
+      color: #183c34;
+      font-size: 23px;
+      margin-bottom: 4px;
+    }
+
+    .company {
+      color: #b8842b;
+      font-weight: 800;
+    }
+
+    .date {
+      background: #f7f4ef;
+      border: 1px solid #eadfce;
+      color: #183c34;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      height: fit-content;
+    }
+
+    ul {
+      margin-top: 14px;
+      padding-left: 20px;
+      color: #4b5563;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eadfce;
+      border-radius: 26px;
+      padding: 26px;
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.052);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 60px rgba(24, 60, 52, 0.13);
+    }
+
+    .card h3 {
+      color: #183c34;
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #59636e;
+      font-size: 15px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .tag {
+      background: white;
+      border: 1px solid #eadfce;
+      color: #183c34;
+      padding: 10px 15px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .dark {
+      background: #183c34;
+      color: white;
+    }
+
+    .dark .section-title h2 {
+      color: white;
+    }
+
+    .dark .section-title span {
+      color: #d8b76a;
+    }
+
+    .dark .card {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .dark .card h3 {
+      color: white;
+    }
+
+    .dark .card p {
+      color: #e6e8ea;
+    }
+
+    .contact-box {
+      background: white;
+      border: 1px solid #eadfce;
+      border-radius: 30px;
+      padding: 42px;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.07);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .contact-box h3 {
+      color: #183c34;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #59636e;
+      margin-bottom: 20px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-links a {
+      background: #f7f4ef;
+      border: 1px solid #eadfce;
+      color: #183c34;
+      padding: 13px 15px;
+      border-radius: 14px;
+      font-weight: 800;
+    }
+
+    footer {
+      background: #102a24;
+      color: white;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    footer p {
+      color: #d6dbdd;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 58px 0;
+      }
+
+      section {
+        padding: 66px 0;
+      }
+
+      .profile-card {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class='container'>
+      <nav>
+        <div class='logo'>HamidReza Kouhian</div>
+        <div class='nav-links'>
+          <a href='#about'>About</a>
+          <a href='#experience'>Experience</a>
+          <a href='#projects'>Projects</a>
+          <a href='#skills'>Skills</a>
+          <a href='#education'>Education</a>
+          <a href='#contact'>Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class='hero'>
+      <div class='container hero-grid'>
+        <div>
+          <span class='eyebrow'>Economics, Pricing Analytics and Business Strategy</span>
+          <h1>HamidReza Kouhian</h1>
+          <p class='hero-text'>Economist | Business Analyst | Data Analyst with experience in dynamic pricing, commercial analytics, econometrics, investment analysis, and data-driven business decision-making.</p>
+          <div class='buttons'>
+            <a class='btn btn-primary' href='#experience'>View Work Experience</a>
+            <a class='btn btn-secondary' href='#contact'>Contact Me</a>
+          </div>
+        </div>
+
+        <div class='profile-card'>
+<img class='profile-photo' src='hamid-photo.png' alt='Profile photo of HamidReza Kouhian'>
+          <h2>HamidReza Kouhian</h2>
+          <p>Economist | Business Analyst | Data Analyst</p>
+          <div class='profile-details'>
+            <div class='detail'>Email: hamidreza.kouhian@Snapp-box.com</div>
+            <div class='detail'>Phone: +98 930 381 3714</div>
+            <div class='detail'>Location: Tehran, Iran</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id='about'>
+      <div class='container'>
+        <div class='section-title'>
+          <span>ABOUT ME</span>
+          <h2>Profile Summary</h2>
+        </div>
+        <div class='about-box'>
+          I am an economist and data analyst focused on pricing, commercial analytics, and applied microeconomics. My work combines econometric thinking, business strategy, and technical implementation using tools such as R, Python, Stata, MATLAB, Excel, QGIS, and ArcGIS. I have worked on marketplace pricing, on-demand logistics, investment analysis, banking policy research, and urban economics research.
+        </div>
+      </div>
+    </section>
+
+    <section id='experience'>
+      <div class='container'>
+        <div class='section-title'>
+          <span>WORK EXPERIENCE</span>
+          <h2>Professional Experience</h2>
+        </div>
+
+        <div class='timeline'>
+
+          <div class='experience-card'>
+            <div class='experience-top'>
+              <div>
+                <h3>Pricing / Commercial Analytics</h3>
+                <div class='company'>Snapp Box - Snapp Group | Tehran, Iran</div>
+              </div>
+              <div class='date'>Mar 2025 - Present</div>
+            </div>
+            <ul>
+              <li>Co-developed destination-aware origin-destination pricing using demand and supply elasticities at hex-to-hex level.</li>
+              <li>Built a digital twin to validate pricing policies with strong out-of-sample performance.</li>
+              <li>Designed Ride-Max and GMV-Max objective modes to improve rides, GMV, and profit under engine constraints.</li>
+              <li>Produced hour-by-hour OD pricing parameters including base, distance, and ETA coefficients for deployment.</li>
+              <li>Created Shiny dashboards for model versus actual evaluation, aggregate KPI tracking, and spatial hex views.</li>
+            </ul>
+          </div>
+
+          <div class='experience-card'>
+            <div class='experience-top'>
+              <div>
+                <h3>Research Assistant</h3>
+                <div class='company'>Tehran Institute for Advanced Studies - TeIAS | Tehran, Iran</div>
+              </div>
+              <div class='date'>2023 - 2024</div>
+            </div>
+            <ul>
+              <li>Supported applied microeconomics and energy economics research projects.</li>
+              <li>Worked on data pipelines, econometric analysis, and reproducible documentation.</li>
+              <li>Used R, Stata, and Python for data analysis and empirical research workflows.</li>
+            </ul>
+          </div>
+
+          <div class='experience-card'>
+            <div class='experience-top'>
+              <div>
+                <h3>Legal Researcher - Judicial and Banking Policy</h3>
+                <div class='company'>Iran Think Tanks Network | Tehran, Iran</div>
+              </div>
+              <div class='date'>Jun 2020 - May 2021</div>
+            </div>
+            <ul>
+              <li>Authored analytical reports on the new cheque law for policy and research institutions.</li>
+              <li>Prepared media briefs and policy-oriented summaries for public and institutional audiences.</li>
+              <li>Presented policy research findings to members of parliament and related stakeholders.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id='projects' class='dark'>
+      <div class='container'>
+        <div class='section-title'>
+          <span>SELECTED PROJECTS</span>
+          <h2>Projects and Research</h2>
+        </div>
+
+        <div class='grid'>
+          <div class='card'>
+            <h3>Business Development Screens</h3>
+            <p>Prepared market and financial briefs for food-industry projects and heavy-machinery assembly opportunities for SoorGroup Qatar.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Marketplace Pricing Analytics</h3>
+            <p>Studied price-sales dynamics under seller competition and contributed to pricing analytics workflows at Digikala.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Dynamic Pricing Evaluation</h3>
+            <p>Designed cohort-based uplift tests for price multipliers and surge rules in on-demand logistics.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Solar Power Plant Investment</h3>
+            <p>Analyzed LCOE and NPV scenarios with sensitivity to tariffs, capacity factor, and financing structure.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Urban Sorting and Transit</h3>
+            <p>Worked on a research paper about heterogeneous responses to rail and freeway expansion in Houston.</p>
+          </div>
+
+          <div class='card'>
+            <h3>Policy and Banking Research</h3>
+            <p>Produced analytical policy content related to banking regulation and the new cheque law.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id='skills'>
+      <div class='container'>
+        <div class='section-title'>
+          <span>SKILLS</span>
+          <h2>Technical and Analytical Skills</h2>
+        </div>
+
+        <div class='tag-list'>
+          <div class='tag'>R</div>
+          <div class='tag'>Python</div>
+          <div class='tag'>Stata</div>
+          <div class='tag'>MATLAB</div>
+          <div class='tag'>Microsoft Excel</div>
+          <div class='tag'>Shiny Dashboards</div>
+          <div class='tag'>QGIS</div>
+          <div class='tag'>ArcGIS</div>
+          <div class='tag'>Dynamic Pricing</div>
+          <div class='tag'>Econometrics</div>
+          <div class='tag'>Time-Series</div>
+          <div class='tag'>A/B Testing</div>
+          <div class='tag'>Quasi-Experimental Evaluation</div>
+          <div class='tag'>Investment Analysis</div>
+          <div class='tag'>Business Analytics</div>
+        </div>
+      </div>
+    </section>
+
+    <section id='education'>
+      <div class='container'>
+        <div class='section-title'>
+          <span>EDUCATION</span>
+          <h2>Education</h2>
+        </div>
+
+        <div class='grid'>
+          <div class='card'>
+            <h3>M.Sc. in Economics</h3>
+            <p>TeIAS - Khatam University<br>2021 - 2023<br>Tehran, Iran</p>
+          </div>
+
+          <div class='card'>
+            <h3>B.Sc. in Mechanical Engineering</h3>
+            <p>University of Tehran<br>2016 - 2021<br>Tehran, Iran</p>
+          </div>
+
+          <div class='card'>
+            <h3>Awards and Honors</h3>
+            <p>25th among 10,000 in the Nationwide Graduate Exam in Economics. Ranked 1st in GPA in the Energy Economics cohort at TeIAS.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id='contact'>
+      <div class='container'>
+        <div class='section-title'>
+          <span>CONTACT</span>
+          <h2>Get in Touch</h2>
+        </div>
+
+        <div class='contact-box'>
+          <div>
+            <h3>Let us connect</h3>
+            <p>If you are interested in pricing analytics, business strategy, applied economics, or data-driven decision-making, feel free to contact me.</p>
+          </div>
+
+          <div class='contact-links'>
+            <a href='mailto:hamidreza.kouhian@Snapp-box.com'>Email: hamidreza.kouhian@Snapp-box.com</a>
+            <a href='tel:+98 930 381 3714'>Phone: +98 930 381 3714</a>
+            <a href='https://www.linkedin.com/in/your-linkedin' target='_blank'>LinkedIn</a>
+            <a href='https://github.com/your-github' target='_blank'>GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class='container'>
+      <strong>HamidReza Kouhian</strong>
+      <p>Economics | Pricing Analytics | Business Intelligence</p>
+      <p>© 2026 - All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
